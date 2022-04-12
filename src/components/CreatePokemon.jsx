@@ -45,7 +45,7 @@ export default function PokemonCreate() {
             errors.name = 'There is already a pokemon with that name.'
         }
         //  || !/.*\.(gif|jpe?g|bmp|png)$/.test(input.img)
-        else if (!/(www|http:|https:)+[^\s]+[\w]/.test(input.img)|| !/.*\.(gif|jpe?g|bmp|png)$/.test(input.img)){
+        else if (!/(www|http:|https:)+[^\s]+[\w]/.test(input.img)|| !/(gif|jpe?g|bmp|png)/.test(input.img)){
             errors.img= "if the image is not found we will assign a default image";
         }
 
