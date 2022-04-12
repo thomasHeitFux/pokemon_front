@@ -67,7 +67,7 @@ export  function getTypes(){
 export function deletePokemon(id) {
     return async function(){
         console.log(id)
-        const json = await axios.delete(`https://pokemonspi.herokuapp.com/${id}`)
+        const json = await axios.delete(`https://pokemonspi.herokuapp.com/delete/${id}`)
         return json;
     }
 }
