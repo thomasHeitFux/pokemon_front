@@ -45,7 +45,7 @@ export default function Home() {
         setCurrentPage(1);
         setOrder(`ordenado de ${e.target.value}`)
     }
-    function handlerOrderPower(e) {
+    function handlerPowerAtack(e) {
         e.preventDefault();
         dispatch(powerAtack())
         setCurrentPage(1);
@@ -73,7 +73,10 @@ export default function Home() {
                         <option value="A-Z">A-Z</option>
                         <option value="Z_A">Z-A</option>
                     </select>
-                    <button onClick={handlerPowe}>atack</button>
+
+                    {/* botoncito */}
+                    <button onClick={handlerPowerAtack}>atack</button>
+                    
                     <select className={style.filters} onChange={e => handlerOrderPower(e)}>
                         <option value="strong"> Strong</option>
                         <option value="weak">Weak</option>
