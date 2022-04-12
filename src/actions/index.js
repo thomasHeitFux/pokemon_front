@@ -10,6 +10,7 @@ export const GET_DETAIL='GET_DETAIL'
 export const ORDER_POWER='ORDER_POWER'
 export const EMPTY_DETAIL='EMPTY_DETAIL'
 
+//------------------------------------------VACIA EL ESTADO DEL DETALLE
 export  function emptyDetail(payload){
         return ({
             type: EMPTY_DETAIL,
@@ -18,8 +19,7 @@ export  function emptyDetail(payload){
     
 };
 
-//TRAE DETALLE DE POKEMON POR ID
-
+//----------------------------------------TRAE DETALLE DE POKEMON POR ID
 export  function getDetail(id){
     return async function (dispatch) {
         var json = await axios(`https://pokemonspi.herokuapp.com/pokemons/${id}`);
@@ -30,7 +30,7 @@ export  function getDetail(id){
     }
 };
 
-//TRAE TODOS LOS POKEMONS DEL BACK
+//-------------------------------------TRAE TODOS LOS POKEMONS DEL BACK
 export  function getPokemons(){
     return function (dispatch) {
         // 'https://pokemonspi.herokuapp.com/pokemons'
@@ -41,8 +41,6 @@ export  function getPokemons(){
         }))
     }
 };
-
-
 // export  function getPokemons(){
 //     return async function (dispatch) {
 //         var json = await axios('http://localhost:3001/pokemons');
@@ -52,7 +50,7 @@ export  function getPokemons(){
 //         })
 //     }
 // };
-// TRAE TODOS LO TIPOS DEL BACK
+// ----------------------------------------TRAE TODOS LOS TIPOS DEL BACK
 export  function getTypes(){
     return async function (dispatch) {
         var json = await axios('https://pokemonspi.herokuapp.com/types');
@@ -63,7 +61,7 @@ export  function getTypes(){
     }
 };
 
-//DELETEA AL POKEMON POR ID
+//----------------------------------------------DELETEA AL POKEMON POR ID
 export function deletePokemon(id) {
     return async function(){
         console.log(id)
@@ -88,7 +86,7 @@ export function filteredTypes(payload){
     }
 };
 
-//FILTRO POR NOMBRE
+//-----------------------------------------------------FILTRO POR NOMBRE
 export  function getPokeNames(name){
     // return async function (dispatch) {
         // const json = await axios(`https://pokemonspi.herokuapp.com/pokemons?name=${name}`);
@@ -99,21 +97,21 @@ export  function getPokeNames(name){
         })
     // }
 };
-//FILTRA POR CREADO O EXISTENTE
+//--------------------------------------------------------FILTRA POR CREADO O EXISTENTE
     export function filteredCreated(payload){
         return{
             type: FILTERED_CREATED,
             payload
         }
     };
-//ORDENA DE A-Z O AL REVES
+//------------------------------------------------------------ORDENA DE A-Z O AL REVES
     export function sortByName(payload){
         return{
             type: SORT_NAME,
             payload
         }
     }
-    //ORDENA DE 
+    //----------------------------------------------------ORDENA POR PODER 
     export function orderPower(payload){
         return{
             type: ORDER_POWER,
