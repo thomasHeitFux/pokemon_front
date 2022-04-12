@@ -22,7 +22,7 @@ export  function emptyDetail(payload){
 
 export  function getDetail(id){
     return async function (dispatch) {
-        var json = await axios(`https://pokemonspi.herokuapp.com/${id}`);
+        var json = await axios(`https://pokemonspi.herokuapp.com/pokemons/${id}`);
         return dispatch({
             type: GET_DETAIL,
             payload: json.data
