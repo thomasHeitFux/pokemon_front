@@ -20,8 +20,8 @@ export default function SearchBar() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        if (allNames.find(e => e === name)) {
-            dispatch(getPokeNames(name))
+        if (allNames.find(e => e === name.toLowerCase())) {
+            dispatch(getPokeNames(name.toLowerCase()))
         }else{
         alert(`${name} is not a pokemon `)
         dispatch(getPokemons())}
