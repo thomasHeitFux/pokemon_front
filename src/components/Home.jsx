@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPokemons, filteredTypes, filteredCreated, sortByName, orderPower } from '../actions'
+import { getPokemons, filteredTypes, filteredCreated, sortByName, orderPower, powerAtack } from '../actions'
 import Card from './card';
 import { Link } from "react-router-dom"
 import style from "./Home.module.css"
@@ -45,6 +45,12 @@ export default function Home() {
         setCurrentPage(1);
         setOrder(`ordenado de ${e.target.value}`)
     }
+    function handlerOrderPower(e) {
+        e.preventDefault();
+        dispatch(powerAtack())
+        setCurrentPage(1);
+        setOrder(`ordenado de ${e.target.value}`)
+    }
 
     return (
 
@@ -67,6 +73,7 @@ export default function Home() {
                         <option value="A-Z">A-Z</option>
                         <option value="Z_A">Z-A</option>
                     </select>
+                    <button onClick={handlerPowe}>atack</button>
                     <select className={style.filters} onChange={e => handlerOrderPower(e)}>
                         <option value="strong"> Strong</option>
                         <option value="weak">Weak</option>

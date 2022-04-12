@@ -7,7 +7,8 @@ import {
     FILTERED_CREATED,
     GET_DETAIL,
     ORDER_POWER,
-    EMPTY_DETAIL
+    EMPTY_DETAIL,
+    ATACK_POWER
 } from "../actions";
 
 const initialState = {
@@ -25,6 +26,12 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 pokemons: action.payload,
                 allPokemons: action.payload
+            }
+        case ATACK_POWER:
+           const filteredAtack = state.pokemons.filter(e=>e.atack>99) 
+        return{
+            ...state,
+            pokemons:filteredAtack
             }
         //ORDEN PODER
         case ORDER_POWER:

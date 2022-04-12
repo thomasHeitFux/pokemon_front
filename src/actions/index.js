@@ -9,6 +9,7 @@ export const SORT_NAME= 'SORT_NAME';
 export const GET_DETAIL='GET_DETAIL'
 export const ORDER_POWER='ORDER_POWER'
 export const EMPTY_DETAIL='EMPTY_DETAIL'
+export const ATACK_POWER='ATACK_POWER'
 
 //------------------------------------------VACIA EL ESTADO DEL DETALLE
 export  function emptyDetail(payload){
@@ -115,6 +116,13 @@ export  function getPokeNames(name){
     export function orderPower(payload){
         return{
             type: ORDER_POWER,
+            payload
+        }
+    }
+
+    export function powerAtack(payload){
+        return{
+            type: ATACK_POWER,
             payload
         }
     }
