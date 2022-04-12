@@ -33,7 +33,8 @@ export  function getDetail(id){
 //TRAE TODOS LOS POKEMONS DEL BACK
 export  function getPokemons(){
     return function (dispatch) {
-         axios('https://pokemonspi.herokuapp.com//pokemons')
+        // 'https://pokemonspi.herokuapp.com/pokemons'
+         axios('https://pokemonspi.herokuapp.com/pokemons')
          .then((json)=> dispatch({
             type: GET_POKEMONS,
             payload: json.data
@@ -54,7 +55,7 @@ export  function getPokemons(){
 // TRAE TODOS LO TIPOS DEL BACK
 export  function getTypes(){
     return async function (dispatch) {
-        var json = await axios('https://pokemonspi.herokuapp.com//types');
+        var json = await axios('https://pokemonspi.herokuapp.com/types');
         return dispatch({
             type: GET_TYPES,
             payload: json.data
@@ -66,7 +67,7 @@ export  function getTypes(){
 export function deletePokemon(id) {
     return async function(){
         console.log(id)
-        const json = await axios.delete(`https://pokemonspi.herokuapp.com//${id}`)
+        const json = await axios.delete(`https://pokemonspi.herokuapp.com/${id}`)
         return json;
     }
 }
@@ -74,7 +75,7 @@ export function deletePokemon(id) {
 // HACE EL POST DEL POKEMON     
 export function postPokemon(payload) {
     return async function(){
-        const json = await axios.post('https://pokemonspi.herokuapp.com//pokemons',payload)
+        const json = await axios.post('https://pokemonspi.herokuapp.com/pokemons',payload)
         return json;
     }
 }
@@ -90,7 +91,7 @@ export function filteredTypes(payload){
 //FILTRO POR NOMBRE
 export  function getPokeNames(name){
     // return async function (dispatch) {
-        // const json = await axios(`https://pokemonspi.herokuapp.com//pokemons?name=${name}`);
+        // const json = await axios(`https://pokemonspi.herokuapp.com/pokemons?name=${name}`);
         return ({
             type: GET_POKENAMES,
             // payload: json.data
