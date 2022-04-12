@@ -44,6 +44,9 @@ export default function PokemonCreate() {
         } else if (allNames.find(e => e === input.name.toLowerCase())) {
             errors.name = 'There is already a pokemon with that name.'
         }
+        else if (input.name.length>12) {
+            errors.name = 'The name is too large.'
+        }
         //  || !/.*\.(gif|jpe?g|bmp|png)$/.test(input.img)
         else if (!/(www|http:|https:)+[^\s]+[\w]/.test(input.img)|| !/(gif|jpe?g|bmp|png)/.test(input.img)){
             errors.img= "if the image is not found we will assign a default image";
