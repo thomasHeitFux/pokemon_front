@@ -135,7 +135,7 @@ export default function PokemonCreate() {
                 <div>
                     {/* INPUT IMAGEN */}
                 
-                    <input className={style.controls} placeholder="Enter the image" autoComplete='off' type="text" value={input.img} name="img" onChange={handleChange} />
+                    <input className={style.controls} placeholder="Enter the image" autoComplete='off' type="text" value={errors.img?input.img="":input.img} name="img" onChange={handleChange} />
                     {errors.img && (<p className={style.danger}>{errors.img}</p>)}
                 </div>
                 <div>
