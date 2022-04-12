@@ -67,7 +67,7 @@ export default function Detail() {
                             <div className={style.bar}></div>
                         </div>
                         <div className={style.skill}>
-                            <h3>Width:</h3><h3>{myPokemon[0].width}</h3>
+                            <h3>Weight:</h3><h3>{myPokemon[0].width}</h3>
                             <div className={style.bar}></div>
                         </div>
                         <ul><h3>Types:</h3>
