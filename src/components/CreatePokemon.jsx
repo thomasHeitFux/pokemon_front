@@ -46,7 +46,8 @@ export default function PokemonCreate() {
         }
         //  || !/.*\.(gif|jpe?g|bmp|png)$/.test(input.img)
         else if (!/(www|http:|https:)+[^\s]+[\w]/.test(input.img)){
-            errors.img= "if the image is not found we will assign a default image"
+            errors.img= "if the image is not found we will assign a default image";
+            input.img ="https://i.pinimg.com/originals/70/a6/9b/70a69b357b7ea034151f45e82425367f.png";
         }
         else if (input.types.length > 2 ) {
             errors.type = 'You must choose between 1 and 2 types.'
@@ -135,7 +136,7 @@ export default function PokemonCreate() {
                 <div>
                     {/* INPUT IMAGEN */}
                 
-                    <input className={style.controls} placeholder="Enter the image" autoComplete='off' type="text" value={errors.img?input.img="":input.img} name="img" onChange={handleChange} />
+                    <input className={style.controls} placeholder="Enter the image" autoComplete='off' type="text" value={input.img} name="img" onChange={handleChange} />
                     {errors.img && (<p className={style.danger}>{errors.img}</p>)}
                 </div>
                 <div>
