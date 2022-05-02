@@ -139,7 +139,7 @@ export default function Home() {
                     allPokemons={allPokemons.length}
                     paginado={paginado} />
                 
-                {totalPages !== currentPage && (<button className={style.prevNext} onClick={() => paginado(currentPage + 1)}>next</button>)}
+                {totalPages !== currentPage && currentPage>0&&(<button className={style.prevNext} onClick={() => paginado(currentPage + 1)}>next</button>)}
 
 
             </div>
