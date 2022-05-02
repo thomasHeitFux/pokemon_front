@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 import style from "./Home.module.css"
 import { Paginado } from './paginado';
 import SearchBar from './SearchBar';
-import Loader from './img/loader'
+
 
 
 export default function Home() {
@@ -142,7 +142,7 @@ export default function Home() {
 
 
          </div> </div>
-       :<div><img src={Loader} alt="" /></div>} 
+       :<div><img src='https://c.tenor.com/8KWBGNcD-zAAAAAC/loader.gif' alt="" /></div>} 
 
         
 
