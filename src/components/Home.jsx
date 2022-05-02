@@ -75,7 +75,7 @@ export default function Home() {
                     </select>
 
                     {/* botoncito */}
-                    <button onClick={handlerPowerAtack}>atack</button>
+                    {/* <button onClick={handlerPowerAtack}>atack</button> */}
                     
                     <select className={style.filters} onChange={e => handlerOrderPower(e)}>
                         <option value="strong"> Strong</option>
@@ -115,7 +115,7 @@ export default function Home() {
             </div>
 
 
-            {currPokemons?.map(e => ((
+            {currPokemons?currPokemons.map(e => ((
                 <Link to="/home">
                     <Card
                         img={e.img}
@@ -128,7 +128,7 @@ export default function Home() {
                         defense={e.defense}
                         hp={e.hp}
                         speed={e.speed} />
-                </Link>)))}
+                </Link>))):<h1>loading</h1>}
 
 
             <div className={style.pages}>
