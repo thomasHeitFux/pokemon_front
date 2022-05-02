@@ -54,8 +54,8 @@ export default function Home() {
 
     return (
 
-        <div className={style.background}>
-          {currPokemons.length>0?<div>
+        <div >
+          {currPokemons.length>0?<div className={style.background}>
 
              <div className={style.nav}>
              <Link to='/'>
