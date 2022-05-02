@@ -115,7 +115,7 @@ export default function Home() {
             </div>
 
 
-            {currPokemons?currPokemons.map(e => ((
+            {currPokemons.length>0?currPokemons.map(e => ((
                 <Link to="/home">
                     <Card
                         img={e.img}
@@ -128,7 +128,7 @@ export default function Home() {
                         defense={e.defense}
                         hp={e.hp}
                         speed={e.speed} />
-                </Link>))):<h1>loading</h1>}
+                </Link>))):<h1>Loading...</h1>}
 
 
             <div className={style.pages}>
