@@ -15,7 +15,7 @@ export function Paginado({ pokemonsPerPage, allPokemons, paginado }) {
                 {pageNumbers && pageNumbers.map((n) => (
                     <div>
                         <li className={style.li}>
-                            <a onClick={() => paginado(n)}>{n}</a>
+                            <a onClick={ () => style='color:red'&&paginado(n)}>{n}</a>
                         </li>
                      
                     </div>
