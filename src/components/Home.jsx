@@ -141,7 +141,7 @@ export default function Home() {
 
 
          </div> </div>
-       :<div>Loading...</div>} 
+       :<div><img src="https://cdn.dribbble.com/users/1188852/screenshots/2975069/my-ezvid-video.gif" alt="" /></div>} 
 
         
 
