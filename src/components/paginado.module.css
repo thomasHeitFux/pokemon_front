@@ -17,7 +17,7 @@
     cursor: pointer;
     background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.308)); 
 }
-.li:active{
+.li:focus{
     color: red;
 }
 .li:hover{
