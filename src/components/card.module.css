@@ -22,14 +22,12 @@
     border-left:1px solid rgba(255, 255, 255, 0.2) ;
     backdrop-filter: blur(5px);
     transition: 0.8s;
-    animation: animation 10s ease infinite;
+    animation: animation 5s ease infinite;
 }
 
 @keyframes animation{
   0%{background-position: 0,50%;}
-  25%{background-position: 50%,75%;}
   50%{background-position: 100%,50%;}
-  75%{background-position: 75%,50%;}
   100%{background-position: 0,50%;}
 }
 .container:hover{
