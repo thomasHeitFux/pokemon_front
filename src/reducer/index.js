@@ -86,11 +86,14 @@ function rootReducer(state = initialState, action) {
         case FILTERED_CREATED:
             let allis = state.allPokemons;
             const createdFiltered = action.payload === 'creados' ? allis.filter(e => e.createInDb) : allis.filter(e => !e.createInDb)
-           if (action.payload === 'creados' && createdFiltered.length<1) {
-            return alert('No pokemons')
+           if (action.payload==='creados' && createdFiltered.length<1) {
+            alert('No pokemons')
+            return {
+                ...state,
+                pokemons: allis 
+            }
              
            }else if(action.payload === 'existente'){
-           
                 return {
                     ...state,
                     pokemons: createdFiltered
