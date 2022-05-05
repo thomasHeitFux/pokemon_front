@@ -26,11 +26,12 @@ export default function SearchBar() {
         alert(`${name} is not a pokemon `)
         dispatch(getPokemons())}
     }
+    // onkeydown = "if (event.keyCode == 13)
 
 return(
     <div className={style.container}>
         <input className={style.searchbar} onChange={e=>handleInputChange(e)} type="text" placeholder='Search...'/>
-        <button className={style.button} onClick={e=>handleSubmit(e)} type="submit">Search</button>
+        <button className={style.button} onKeyDown={e.keyCode==13?handleSubmit():console.log('hola')} onClick={e=>handleSubmit(e)} type="submit">Search</button>
     </div>
 )
 
