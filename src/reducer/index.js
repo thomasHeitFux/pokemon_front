@@ -89,7 +89,7 @@ function rootReducer(state = initialState, action) {
            if (action.payload === 'creados' && createdFiltered.length<1) {
             return alert('No pokemons')
              
-           }else if(action.payload === 'existing'){
+           }else if(action.payload === 'existente'){
            
                 return {
                     ...state,
