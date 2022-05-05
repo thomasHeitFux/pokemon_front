@@ -46,12 +46,12 @@ export default function Home() {
         setCurrentPage(1);
         setOrder(`ordenado de ${e.target.value}`)
     }
-    function handlerPowerAtack(e) {
-        e.preventDefault();
-        dispatch(powerAtack())
-        setCurrentPage(1);
-        setOrder(`ordenado de ${e.target.value}`)
-    }
+    // function handlerPowerAtack(e) {
+    //     e.preventDefault();
+    //     dispatch(powerAtack())
+    //     setCurrentPage(1);
+    //     setOrder(`ordenado de ${e.target.value}`)
+    // }
 
     return (
 
@@ -79,7 +79,7 @@ export default function Home() {
                  {/* <button onClick={handlerPowerAtack}>atack</button> */}
                  
                  <select className={style.filters} onChange={e => handlerOrderPower(e)}>
-                     <option value="strong"> Strong</option>
+                     <option value="strong">Strong</option>
                      <option value="weak">Weak</option>
                  </select>
                  <select className={style.filters} onChange={(e) => handlerCreated(e)}>
