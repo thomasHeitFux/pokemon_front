@@ -12,7 +12,7 @@
     margin: 5px ;
     padding: 8px 20px;
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-    background:linear-gradient(145deg,rgba(255, 0, 0, 0.616),rgba(255, 0, 157, 0.616),rgba(162, 0, 255, 0.616),rgba(0, 109, 128, 0.562),rgba(0, 128, 96, 0.562));
+    background:linear-gradient(145deg,rgba(255, 0, 0, 0.616),rgba(255, 0, 157, 0.616),rgba(162, 0, 255, 0.616),rgba(0, 119, 128, 0.562),rgba(90, 128, 0, 0.616),rgba(128, 119, 0, 0.603));
     background-size: 400%,400%;
     color: #000;
     overflow: hidden;
