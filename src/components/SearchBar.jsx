@@ -27,15 +27,12 @@ export default function SearchBar() {
         dispatch(getPokemons())}
     }
    
-    function onKeyPressed(e) {
-        console.log(e.key);
-      }
       
 
 return(
     <div className={style.container}>
         <input className={style.searchbar} onChange={e=>handleInputChange(e)} type="text" placeholder='Search...'/>
-        <button className={style.button} onKeyPressed={e=>onKeyPressed(e)} onClick={e=>handleSubmit(e)} type="submit">Search</button>
+        <button className={style.button}  onClick={e=>handleSubmit(e)} onKeyPress={e=>handleSubmit(e)} type="submit">Search</button>
     </div>
 )
 
