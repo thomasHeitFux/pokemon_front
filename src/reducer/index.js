@@ -86,10 +86,19 @@ function rootReducer(state = initialState, action) {
         case FILTERED_CREATED:
             let allis = state.allPokemons;
             const createdFiltered = action.payload === 'creados' ? allis.filter(e => e.createInDb) : allis.filter(e => !e.createInDb)
+           if (createdFiltered.length<1) {
+               alert('No pokemons')
+               return {
+                ...state,
+                pokemons: allis
+            }
+           }else{
             return {
                 ...state,
                 pokemons: action.payload === "All" ? allis : createdFiltered
             }
+           }
+            
         //ORDENO A-Z
         case SORT_NAME:
             const sortByName = action.payload === 'A-Z' ? state.allPokemons.sort(function (a, b) {
