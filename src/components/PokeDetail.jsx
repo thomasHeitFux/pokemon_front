@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Link, useParams, useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import style from './detail.module.css'
+import ash from '../assets/ash.png'
 
 export default function Detail() {
     const dispatch = useDispatch();
@@ -18,11 +19,11 @@ export default function Detail() {
         dispatch(getDetail(pokeId.id))
     }, [])
 
-    
+
 
     function handleDelete(e) {
         e.preventDefault()
-        if(window.confirm("are you sure?")){
+        if (window.confirm("are you sure?")) {
             dispatch(emptyDetail())
             dispatch(deletePokemon(pokeId.id));
             history.push('/home')
@@ -31,14 +32,14 @@ export default function Detail() {
     const myPokemon = useSelector(state => state.detail)
     return (<div className={style.background}>
 
-        <div className={style.container}>
-            {
+        <Link to='/home' ><button className={style.button} onClick={handlerBack}>Go back</button></Link>
+        {
+            myPokemon.length > 0 ?
+                <div className={style.container}>
 
-                myPokemon.length > 0 ?
 
                     <div>
                         <div className={style.name}>
-                            <Link to='/home' ><button className={style.button} onClick={handlerBack}>Go back</button></Link>
 
                             <h1>{myPokemon[0].name.toUpperCase()}</h1>
                             {myPokemon[0].createInDb ? <button className={style.delete} onClick={handleDelete}>Delete</button> : <div></div>}
@@ -73,12 +74,16 @@ export default function Detail() {
                         <ul><h3>Types:</h3>
                             {myPokemon[0].type ? myPokemon[0].type.map((e) => (<h4>{e}</h4>)) : myPokemon[0].Types.map(e => (<h4>{e.name}</h4>))}
                         </ul>
-                    </div> :
-                    <p>Loading...</p>
 
 
-            }
 
+
+                    </div>
+                </div> :
+                <div><img src='https://i.gifer.com/origin/0d/0dea0c59cbf084d981fc5b55643cb6e6.gif' alt="" /></div>
+        }
+        <div className={style.ash}>
+            <img src={ash} />
         </div>
     </div>
     )
