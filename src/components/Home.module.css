@@ -14,7 +14,7 @@ body{
     justify-content: center;    
     background-color: #b8a6ce;
     padding: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .back {
@@ -98,12 +98,12 @@ color: #fff;
     border: none;
     padding: 0 5px 0 5px;
     background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.452));
-    color: black;
+    color: white;
     font-size: 18px;
     transition: 0.8s;
 }
 .prevNext:hover{
     color: black;
-    background: #1f83c9;
+    background: #b8a6ce;
     cursor: pointer;
 }

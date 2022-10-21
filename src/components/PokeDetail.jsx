@@ -49,27 +49,27 @@ export default function Detail() {
 
                         <div className={style.skill}>
                             <h3>Health:</h3><h3>{myPokemon[0].hp}</h3>
-                            <div className={style.bar}></div>
+                            <div className={style.bar}><div className={style.colorbar} style={{width:`${myPokemon[0].hp}%`}}></div></div>
                         </div>
                         <div className={style.skill}>
                             <h3>Atack:</h3><h3>{myPokemon[0].atack}</h3>
-                            <div className={style.bar}></div>
+                            <div className={style.bar}><div className={style.colorbar} style={{width:`${myPokemon[0].atack}%`}}></div></div>
                         </div>
                         <div className={style.skill}>
                             <h3>Defense:</h3><h3>{myPokemon[0].defense}</h3>
-                            <div className={style.bar}></div>
+                            <div className={style.bar}><div className={style.colorbar} style={{width:`${myPokemon[0].defense}%`}}></div></div>
                         </div>
                         <div className={style.skill}>
                             <h3>Speed:</h3><h3>{myPokemon[0].speed}</h3>
-                            <div className={style.bar}></div>
+                            <div className={style.bar}><div className={style.colorbar} style={{width:`${myPokemon[0].speed}%`}}></div></div>
                         </div>
                         <div className={style.skill}>
                             <h3>Height:</h3><h3>{myPokemon[0].height}</h3>
-                            <div className={style.bar}></div>
+                            <div className={style.bar}><div className={style.colorbar} style={{width:`${myPokemon[0].height}%`}}></div></div>
                         </div>
                         <div className={style.skill}>
                             <h3>Weight:</h3><h3>{myPokemon[0].width}</h3>
-                            <div className={style.bar}></div>
+                            <div className={style.bar}><div className={style.colorbar}  style={{width:`${myPokemon[0].width/10}%`}}></div></div>
                         </div>
                         <ul><h3>Types:</h3>
                             {myPokemon[0].type ? myPokemon[0].type.map((e) => (<h4>{e}</h4>)) : myPokemon[0].Types.map(e => (<h4>{e.name}</h4>))}

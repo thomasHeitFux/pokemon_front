@@ -3,78 +3,46 @@
 	padding: 0;
 }
 
-.container {
-	/* margin-top: 10px; */
-	/* https://images3.alphacoders.com/118/thumb-1920-1187753.png */
-	/* https://wallpaperbat.com/img/224909-pokemon-black-wallpaper.jpg */
-	/* https://www.wallpapertip.com/wmimgs/90-909034_sphere.jpg */
-	position: fixed;
-	min-width: 100vw;
-	min-height: 100vh;
-	background: url(https://www.wallpapertip.com/wmimgs/90-909034_sphere.jpg) no-repeat center center;
-	background-size: cover;
-
-	color: white;
+.ash{
+    bottom: 0%;
+    position: absolute;
 }
 
 .button {
-	/* box-shadow:inset 0px 1px 0px 0px #ffffff; */
-	/* background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%); */
-	/* background-color:#ededed; */
-	background: #ffffff5d;
-	border-radius: 50%;
-	margin-top: 42.5vh;
-	/* border: 1px solid #dcdcdc; */
-	display: inline-block;
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	border-radius: 4%;
+	background: #b96ccc;
 	cursor: pointer;
 	color: #000;
-	font-family: Arial;
 	font-size: 20px;
 	text-decoration: none;
-	margin-right: 25vw;
-	margin-left: 16.5vw;
-	width: 60px;
-	height: 60px;
+	width: 100px;
+	height: 50px;
 	border: none;
 	font-weight: 600;
-	transition: 0.8s;
+	transition: 1.5s;
+	animation: buttonanimate 1.5s ease infinite ;
 }
-
+@keyframes buttonanimate {
+	0%{
+		box-shadow: 0 0 0 0 rgba(256,256,256,.1);
+		transform: scale(.99)	
+	}
+	50%{transform: scale(1);
+		box-shadow: 0 0 0 25px rgba(256,256,256,0);}
+	100%{transform: scale(.99);
+		box-shadow: 0 0 0 0 rgba(256,256,256,0);}
+}
 .button:hover {
-	background: linear-gradient(#dfdfdf07, rgba(255, 255, 255, 0.479), #ededed);
-	color: black;
-	/* background-color:#dfdfdf; */
+	background: #bd8aca;
+	transform: scale(1.1);
+	animation:none
 }
 
-/* .button:active {
-	position:relative;
-	top:1px;
-} */
-
-/* .redondo{
-	display:inline-block;
-	cursor:pointer;
-	text-decoration:none;
-	margin-top: 30px;
-	border: none;
-	color: #ccc;
-	font-size: 40px;
-	font-weight: 900;
-
-	/* display: block; */
-/* width: 150px;
-	height: 150px;
-	border-radius: 50%;
-	background: rgb(255,255,255);
-	background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(1,1,1,1) 50%, rgba(255,10,0,1) 100%);
-	} */
-.welcome {
-	/* -webkit-text-stroke: 2px black; */
-	/* font-weight: 700; */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top: 50vh;
-	margin-right: 25vw;
-	margin-left: 25vw;
+.image {
+position: absolute;
+top: 14%;
+left: 60%;
 }

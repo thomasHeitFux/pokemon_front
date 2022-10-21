@@ -45,15 +45,17 @@ body{
     border: none;
     padding: 12px;
     width: 100%;
-    background: #1f53c5;
-    color: white;
+    background: #ae8dd6;
+    color: black;
     margin: 16px 0;
     font-size: 18px;
     transition: 0.4s;
     border-bottom: none;
+    border-radius: 8px;
 }
 .button:hover{
-    background: #1f83c9;
+   cursor: pointer;
+    background: #b8a6ce;
 }
 .li{
     /* position:absolute; */

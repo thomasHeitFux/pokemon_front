@@ -56,22 +56,22 @@ export default function PokemonCreate() {
         else if (input.types.length > 2 ) {
             errors.type = 'You must choose between 1 and 2 types.'
         }
-        else if (!input.hp || input.hp > 200 || /([a-z])/.test(input.hp)) {
+        else if (!input.hp || input.hp > 100 || /([a-z])/.test(input.hp)) {
             errors.hp = 'Health points must be within range.'
         }
-        else if (!input.atack || input.atack > 200 || /([a-z])/.test(input.atack) ) {
+        else if (!input.atack || input.atack > 100 || /([a-z])/.test(input.atack) ) {
             errors.atack = 'Atack points must be within range.'
         }
-        else if (!input.defense || input.defense > 200 || /([a-z])/.test(input.defense)) {
+        else if (!input.defense || input.defense > 100 || /([a-z])/.test(input.defense)) {
             errors.defense = 'Defense points must be within range.'
         }
-        else if (!input.speed || input.speed > 200 || /([a-z])/.test(input.speed)) {
+        else if (!input.speed || input.speed > 100 || /([a-z])/.test(input.speed)) {
             errors.speed = 'Speed points must be within range.'
         }
-        else if (!input.height || input.height > 200 || /([a-z])/.test(input.height) ) {
+        else if (!input.height || input.height > 100 || /([a-z])/.test(input.height) ) {
             errors.height = 'Height points must be within range.'
         }
-        else if (!input.width || input.width > 200 || /([a-z])/.test(input.width)) {
+        else if (!input.width || input.width > 100 || /([a-z])/.test(input.width)) {
             errors.width = 'width points must be within range.'
         }
         return errors
@@ -148,42 +148,42 @@ export default function PokemonCreate() {
 {/*------------------------------------------------------------------ INPUT VIDA ------------------------------------------------------------*/}
                 <div className={style.input}>
                     <label>Health:</label>
-                    <input type="range" min="0" max={"200"} name='hp' onChange={handleChange} value={input.hp} />
+                    <input type="range" min="0" max={"100"} name='hp' onChange={handleChange} value={input.hp} />
                     <div className={style.number} >{input.hp} pts.</div>
                     {errors.hp && (<p className={style.danger}>{errors.hp}</p>)}
                 </div>
 {/*------------------------------------------------------------------ INPUT ATAQUE ----------------------------------------------------------*/}
                 <div className={style.input}>
                     <label>Atack:</label>
-                    <input type="range" min={'0'} max={'200'} name='atack' onChange={handleChange} value={input.atack} />
+                    <input type="range" min={'0'} max={'100'} name='atack' onChange={handleChange} value={input.atack} />
                     <div className={style.number} >{input.atack} pts.</div>
                     {errors.atack && (<p className={style.danger}>{errors.atack}</p>)}
                 </div>
 {/*-------------------------------------------------------------- INPUT DEFENSA ----------------------------------------------*/}               
                 <div className={style.input}>
                     <label>Defense:</label>
-                    <input type="range" min={'0'} max={'200'} name='defense' onChange={handleChange} value={input.defense} />
+                    <input type="range" min={'0'} max={'100'} name='defense' onChange={handleChange} value={input.defense} />
                     <div className={style.number} >{input.defense} pts.</div>
                     {errors.defense && (<p className={style.danger}>{errors.defense}</p>)}
                 </div>
 {/*-------------------------------------------------------------- INPUT SPEED ----------------------------------------------*/} 
                 <div className={style.input}>
                     <label>Speed:</label>
-                    <input type="range" min={'0'} max={'200'} name='speed' onChange={handleChange} value={input.speed} />
+                    <input type="range" min={'0'} max={'100'} name='speed' onChange={handleChange} value={input.speed} />
                     <div className={style.number} >{input.speed} m/h</div>
                     {errors.speed && (<p className={style.danger}>{errors.speed}</p>)}
                 </div>
 {/*-------------------------------------------------------------- INPUT HEIGHT ----------------------------------------------*/} 
                 <div className={style.input}>
                     <label>Height:</label>
-                    <input type="range" min={'0'} max={'200'} name='height' onChange={handleChange} value={input.height} />
+                    <input type="range" min={'0'} max={'100'} name='height' onChange={handleChange} value={input.height} />
                     <div className={style.number} >{input.height} fts.</div>
                     {errors.height && (<p className={style.danger}>{errors.height}</p>)}
                 </div>
 {/*-------------------------------------------------------------- INPUT WIDTH ----------------------------------------------*/} 
                 <div className={style.input}>
-                    <label>Width:</label>
-                    <input type="range" min={'0'} max={'200'} name='width' onChange={e => handleChange(e)} value={input.width} />
+                    <label>Weight:</label>
+                    <input type="range" min={'0'} max={'1000'} name='width' onChange={e => handleChange(e)} value={input.width} />
                     <div className={style.number} >{input.width} lb.</div>
                     {errors.width && (<p className={style.danger}>{errors.width}</p>)}
                 </div>
