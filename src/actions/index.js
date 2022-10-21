@@ -10,7 +10,7 @@ export const GET_DETAIL='GET_DETAIL'
 export const ORDER_POWER='ORDER_POWER'
 export const EMPTY_DETAIL='EMPTY_DETAIL'
 export const ATACK_POWER='ATACK_POWER'
-
+const url = 'https://backpokemon-production.up.railway.app'
 //------------------------------------------VACIA EL ESTADO DEL DETALLE
 export  function emptyDetail(payload){
         return ({
@@ -23,7 +23,7 @@ export  function emptyDetail(payload){
 //----------------------------------------TRAE DETALLE DE POKEMON POR ID
 export  function getDetail(id){
     return async function (dispatch) {
-        var json = await axios(`https://pokemonspi.herokuapp.com/pokemons/${id}`);
+        var json = await axios(`${url}/pokemons/${id}`);
         return dispatch({
             type: GET_DETAIL,
             payload: json.data
