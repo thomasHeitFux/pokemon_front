@@ -7,6 +7,7 @@ import { Link } from "react-router-dom"
 import style from "./Home.module.css"
 import { Paginado } from './paginado';
 import SearchBar from './SearchBar';
+import ash from '../assets/ash.png';
 
 
 
@@ -56,7 +57,9 @@ export default function Home() {
     return (
 
         <div >
-          {currPokemons.length>0?<div className={style.background}>
+          {
+          currPokemons.length>0?
+          <div className={style.background}>
 
              <div className={style.nav}>
              <Link to='/'>
@@ -142,9 +145,11 @@ export default function Home() {
 
 
          </div> </div>
-       :<div><img src='https://c.tenor.com/8KWBGNcD-zAAAAAC/loader.gif' alt="" /></div>} 
-
-        
+       :<div><img src='https://i.gifer.com/origin/0d/0dea0c59cbf084d981fc5b55643cb6e6.gif' alt="" /></div>
+       } 
+        <div className={style.ash}>
+        <img  src={ash}/>
+        </div>
 
         </div>
     )
