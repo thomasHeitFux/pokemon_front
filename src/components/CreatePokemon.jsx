@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { postPokemon, getTypes, getPokemons } from '../actions';
 import { Link, useHistory } from "react-router-dom"
 import style from "./CreatePokemon/CreatePokemon.module.css"
+import ash from '../assets/ash.png';
 
 export default function PokemonCreate() {
     const dispatch = useDispatch();
@@ -202,6 +203,9 @@ export default function PokemonCreate() {
                 {errors.type && (<p className={style.danger}>{errors.type}</p>)}
                 {input.types.length > 0 && input.name.length > 0 && !errors.name && !errors.hp && !errors.atack && !errors.defense && !errors.height && !errors.width && !errors.type && (<button onClick={e => handleSubmit(e)} className={style.button} type="submit">Create</button>)}
             </form>
+            <div className={style.ash}>
+                <img src={ash} />
+            </div>
         </div>
     )
 }
