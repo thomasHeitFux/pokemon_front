@@ -76,7 +76,7 @@ function rootReducer(state = initialState, action) {
             }
         //FILTRO TIPO
         case FILTERED_TYPE:
-            let allpokes = state.allPokemons;
+            let allpokes = state.pokemons;
             const filtered = action.payload === "all" ? allpokes : allpokes.filter(e =>e.type?e.type.find(e=>e == action.payload ):e.Types.find(e=>e.name==action.payload))
            if (filtered.length<1) {
             alert('No pokemons')
@@ -93,7 +93,7 @@ function rootReducer(state = initialState, action) {
           
         //FILTRO CREADO/EXISTENTE
         case FILTERED_CREATED:
-            let allis = state.allPokemons;
+            let allis = state.pokemons;
             const createdFiltered = action.payload === 'creados' ? allis.filter(e => e.createInDb) : allis.filter(e => !e.createInDb)
            if (action.payload==='creados' && createdFiltered.length<1) {
             alert('No pokemons')
@@ -117,12 +117,12 @@ function rootReducer(state = initialState, action) {
             
         //ORDENO A-Z
         case SORT_NAME:
-            const sortByName = action.payload === 'A-Z' ? state.allPokemons.sort(function (a, b) {
+            const sortByName = action.payload === 'A-Z' ? state.pokemons.sort(function (a, b) {
                 if (a.name > b.name) return 1;
                 if (a.name < b.name) return -1;
                 else return 0;
             })
-                : state.allPokemons.sort(function (a, b) {
+                : state.pokemons.sort(function (a, b) {
                     if (a.name > b.name) return -1;
                     if (a.name < b.name) return 1;
                     else return 0;

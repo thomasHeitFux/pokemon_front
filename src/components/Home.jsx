@@ -73,7 +73,7 @@ export default function Home() {
                         </div>
 
                         <div className={style.filts}>
-                            <select className={style.filters} onChange={e => handlerSort(e)}>
+                            <select className={style.filters}  onChange={e => handlerSort(e)}>
                                 <option value="A-Z">A-Z</option>
                                 <option value="Z_A">Z-A</option>
                             </select>
