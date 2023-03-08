@@ -77,7 +77,7 @@ function rootReducer(state = initialState, action) {
         //FILTRO TIPO
         case FILTERED_TYPE:
             let allpokes = state.pokemons;
-            const filtered = action.payload === "all" ? allpokes : allpokes.filter(e =>e.type?e.type.find(e=>e == action.payload ):e.Types.find(e=>e.name==action.payload))
+            const filtered = action.payload === "all" ? state.allPokemons : allpokes.filter(e =>e.type?e.type.find(e=>e == action.payload ):e.Types.find(e=>e.name==action.payload))
            if (filtered.length<1) {
             alert('No pokemons')
                return{
