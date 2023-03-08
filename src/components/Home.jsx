@@ -27,7 +27,7 @@ export default function Home() {
     }
     useEffect(() => {
         dispatch(getPokemons());
-    }, [dispatch]);
+    }, []);
 
     function handleFilterTypes(e) {
         dispatch(filteredTypes(e.target.value))
