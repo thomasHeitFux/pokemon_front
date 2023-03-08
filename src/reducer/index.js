@@ -35,12 +35,12 @@ function rootReducer(state = initialState, action) {
             }
         //ORDEN PODER
         case ORDER_POWER:
-            const ordered= action.payload ==='weak' ? state.allPokemons.sort(function (a, b) {
+            const ordered= action.payload ==='weak' ? state.pokemons.sort(function (a, b) {
                 if (a.atack > b.atack) return 1;
                 if (a.atack < b.atack) return -1;
                 else return 0;
             })
-                : state.allPokemons.sort(function (a, b) {
+                : state.pokemons.sort(function (a, b) {
                     if (a.atack > b.atack) return -1;
                     if (a.atack < b.atack) return 1;
                     else return 0;
