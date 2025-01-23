@@ -10,7 +10,7 @@ export const GET_DETAIL='GET_DETAIL'
 export const ORDER_POWER='ORDER_POWER'
 export const EMPTY_DETAIL='EMPTY_DETAIL'
 export const ATACK_POWER='ATACK_POWER'
-const url = 'https://pokemonhenry.fly.dev'
+const url = 'https://back-pokemon-f5ma.onrender.com/'
 //------------------------------------------VACIA EL ESTADO DEL DETALLE
 export  function emptyDetail(payload){
         return ({
