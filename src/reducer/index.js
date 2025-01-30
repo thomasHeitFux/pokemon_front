@@ -69,7 +69,7 @@ function rootReducer(state = initialState, action) {
             }
         //FILTRO NOMBRE
         case GET_POKENAMES:
-            const pokeName = state.allPokemons.filter(e=>e.name===action.payload)
+            const pokeName = state.allPokemons.filter(e=>e.name==action.payload)
             return {
                 ...state,
                 pokemons: pokeName
