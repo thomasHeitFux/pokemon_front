@@ -8,7 +8,7 @@ import style from "./Searchbar/Searchbar.module.css"
 
 export default function SearchBar() {
     const dispatch = useDispatch()
-    const [name,setname]= useState("");
+    const [name,setName]= useState("");
     const allPokemons = useSelector((state) => state.allPokemons);
     const allNames = allPokemons.map(e => e.name)
 
