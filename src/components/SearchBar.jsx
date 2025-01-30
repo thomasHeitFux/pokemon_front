@@ -14,25 +14,32 @@ export default function SearchBar() {
 
 
     function handleInputChange(e) {
-    e.preventDefault();
-    setname(e.target.value)
+        e.preventDefault();
+        const inputValue = e.target.value.toLowerCase();
+        setName(inputValue);
+
+        if (inputValue === "") return;  // Evita llamadas vacías
+
+        if (allNames.find(e => e.includes(inputValue))) {
+            dispatch(getPokeNames(inputValue));
+        }
 };
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        if (allNames.find(e => e === name.toLowerCase())) {
-            dispatch(getPokeNames(name.toLowerCase()))
-        }else{
-        alert(`${name} is not a pokemon `)
-        dispatch(getPokemons())}
-    }
+    // function handleSubmit(e) {
+    //     e.preventDefault();
+    //     if (allNames.find(e => e === name.toLowerCase())) {
+    //         dispatch(getPokeNames(name.toLowerCase()))
+    //     }else{
+    //     alert(`${name} is not a pokemon `)
+    //     dispatch(getPokemons())}
+    // }
    
       
 
 return(
     <div className={style.container}>
         <input className={style.searchbar} onChange={e=>handleInputChange(e)} type="text" placeholder='Search...'/>
-        <button className={style.button}  onClick={e=>handleSubmit(e)} onKeyPress={e=>handleSubmit(e)} type="submit">Search</button>
+        {/* <button className={style.button}  onClick={e=>handleSubmit(e)} onKeyPress={e=>handleSubmit(e)} type="submit">Search</button> */}
     </div>
 )
 
