@@ -14,7 +14,7 @@ export default function PokemonCreate() {
     const allNames = allPokemons.map(e => e.name)
 
     useEffect(() => {
-        dispatch(getPokemons());
+        dispatch(getPokemons(),getTypes());
     }, [dispatch]);
 //----------------------------------------------ESTADO PARA LOS INPUTS
     const [input, setInput] = useState({
