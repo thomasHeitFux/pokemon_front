@@ -69,11 +69,19 @@ function rootReducer(state = initialState, action) {
             }
         //FILTRO NOMBRE
         case GET_POKENAMES:
-            const pokeName = state.allPokemons.filter(e=>e.name==action.payload)
+            const pokeName = state.allPokemons.filter(e => 
+                e.name.toLowerCase().includes(action.payload.toLowerCase()) // 🔹 Coincidencia parcial
+            );
+            
+            if (pokeName.length < 1) {  
+                alert(`${action.payload} is not a Pokémon`);
+                return { ...state, pokemons: state.allPokemons }; // 🔹 Evita que la lista quede vacía
+            }
+            
             return {
                 ...state,
                 pokemons: pokeName
-            }
+            };
         //FILTRO TIPO
         case FILTERED_TYPE:
             let allpokes = state.allPokemons;
