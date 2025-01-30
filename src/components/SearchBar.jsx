@@ -18,7 +18,7 @@ export default function SearchBar() {
         const inputValue = e.target.value.toLowerCase();
         setName(inputValue);
 
-        if (inputValue === "") return;  // Evita llamadas vacías
+        if (inputValue === "") getPokemons();  // Evita llamadas vacías
 
         if (allNames.find(e => e.includes(inputValue))) {
             dispatch(getPokeNames(inputValue));
