@@ -10,7 +10,10 @@ export const GET_DETAIL='GET_DETAIL'
 export const ORDER_POWER='ORDER_POWER'
 export const EMPTY_DETAIL='EMPTY_DETAIL'
 export const ATACK_POWER='ATACK_POWER'
-const url = 'https://back-pokemon-f5ma.onrender.com'
+const url = process.env.NODE_ENV === 'production'
+  ? 'https://back-pokemon-f5ma.onrender.com' // URL de producción
+  : 'http://localhost:3001'; // URL de desarrollo
+
 //------------------------------------------VACIA EL ESTADO DEL DETALLE
 export  function emptyDetail(payload){
         return ({
@@ -24,6 +27,8 @@ export  function emptyDetail(payload){
 export  function getDetail(id){
     return async function (dispatch) {
         var json = await axios(`${url}/pokemons/${id}`);
+        console.log(json.data.id);
+        
         return dispatch({
             type: GET_DETAIL,
             payload: json.data

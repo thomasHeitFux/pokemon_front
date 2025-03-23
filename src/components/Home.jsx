@@ -47,12 +47,7 @@ export default function Home() {
         setCurrentPage(1);
         setOrder(`ordenado de ${e.target.value}`)
     }
-    // function handlerPowerAtack(e) {
-    //     e.preventDefault();
-    //     dispatch(powerAtack())
-    //     setCurrentPage(1);
-    //     setOrder(`ordenado de ${e.target.value}`)
-    // }
+   
 
     return (
 
@@ -124,13 +119,14 @@ export default function Home() {
                                     img={e.img}
                                     name={e.name}
                                     type={e.type ? e.type : e.Types.map(e => e.name)}
-                                    id={e.id ? e.id : e.idbd}
+                                    id={e.id}
                                     height={e.height}
                                     weight={e.weight}
                                     atack={e.atack}
                                     defense={e.defense}
                                     hp={e.hp}
-                                    speed={e.speed} />
+                                    speed={e.speed}
+                                    key={e.id} />
                             </Link>
                            
                     )))

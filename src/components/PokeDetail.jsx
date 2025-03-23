@@ -15,6 +15,7 @@ export default function Detail() {
         dispatch(emptyDetail())
     }
 
+
     useEffect(() => {
         dispatch(getDetail(pokeId.id))
     }, [])
@@ -30,49 +31,54 @@ export default function Detail() {
         }
     }
     const myPokemon = useSelector(state => state.detail)
+
+
+console.log(myPokemon);
+
+    
     return (<div className={style.background}>
 
         <Link to='/home' ><button className={style.button} onClick={handlerBack}>Go back</button></Link>
         {
-            myPokemon.length > 0 ?
+            myPokemon.name ?
                 <div className={style.container}>
 
 
                     <div>
                         <div className={style.name}>
 
-                            <h1>{myPokemon[0].name.toUpperCase()}</h1>
-                            {myPokemon[0].createInDb ? <button className={style.delete} onClick={handleDelete}>Delete</button> : <div></div>}
+                            <h1>{myPokemon.name.toUpperCase()}</h1>
+                            {myPokemon.createInDb ? <button className={style.delete} onClick={handleDelete}>Delete</button> : <div></div>}
                         </div>
 
-                        <img className={style.img} src={myPokemon[0].img ? myPokemon[0].img : "https://i.pinimg.com/originals/70/a6/9b/70a69b357b7ea034151f45e82425367f.png"} />
+                        <img className={style.img} src={myPokemon.img ? myPokemon.img : "https://i.pinimg.com/originals/70/a6/9b/70a69b357b7ea034151f45e82425367f.png"} />
 
                         <div className={style.skill}>
-                            <h3>Health:</h3><h3>{myPokemon[0].hp}</h3>
-                            <div className={style.bar}><div className={style.colorbar} style={{width:`${myPokemon[0].hp}%`}}></div></div>
+                            <h3>Health:</h3><h3>{myPokemon.hp}</h3>
+                            <div className={style.bar}><div className={style.colorbar} style={{width:`${myPokemon.hp}%`}}></div></div>
                         </div>
                         <div className={style.skill}>
-                            <h3>Atack:</h3><h3>{myPokemon[0].atack}</h3>
-                            <div className={style.bar}><div className={style.colorbar} style={{width:`${myPokemon[0].atack}%`}}></div></div>
+                            <h3>Atack:</h3><h3>{myPokemon.atack}</h3>
+                            <div className={style.bar}><div className={style.colorbar} style={{width:`${myPokemon.atack}%`}}></div></div>
                         </div>
                         <div className={style.skill}>
-                            <h3>Defense:</h3><h3>{myPokemon[0].defense}</h3>
-                            <div className={style.bar}><div className={style.colorbar} style={{width:`${myPokemon[0].defense}%`}}></div></div>
+                            <h3>Defense:</h3><h3>{myPokemon.defense}</h3>
+                            <div className={style.bar}><div className={style.colorbar} style={{width:`${myPokemon.defense}%`}}></div></div>
                         </div>
                         <div className={style.skill}>
-                            <h3>Speed:</h3><h3>{myPokemon[0].speed}</h3>
-                            <div className={style.bar}><div className={style.colorbar} style={{width:`${myPokemon[0].speed}%`}}></div></div>
+                            <h3>Speed:</h3><h3>{myPokemon.speed}</h3>
+                            <div className={style.bar}><div className={style.colorbar} style={{width:`${myPokemon.speed}%`}}></div></div>
                         </div>
                         <div className={style.skill}>
-                            <h3>Height:</h3><h3>{myPokemon[0].height}</h3>
-                            <div className={style.bar}><div className={style.colorbar} style={{width:`${myPokemon[0].height}%`}}></div></div>
+                            <h3>Height:</h3><h3>{myPokemon.height}</h3>
+                            <div className={style.bar}><div className={style.colorbar} style={{width:`${myPokemon.height}%`}}></div></div>
                         </div>
                         <div className={style.skill}>
-                            <h3>Weight:</h3><h3>{myPokemon[0].width}</h3>
-                            <div className={style.bar}><div className={style.colorbar}  style={{width:`${myPokemon[0].width/10}%`}}></div></div>
+                            <h3>Weight:</h3><h3>{myPokemon.width}</h3>
+                            <div className={style.bar}><div className={style.colorbar}  style={{width:`${myPokemon.width/10}%`}}></div></div>
                         </div>
                         <ul><h3>Types:</h3>
-                            {myPokemon[0].type ? myPokemon[0].type.map((e) => (<h4>{e}</h4>)) : myPokemon[0].Types.map(e => (<h4>{e.name}</h4>))}
+                            {myPokemon.type ? myPokemon.type.map((e) => (<h4>{e}</h4>)) : myPokemon.Types.map(e => (<h4>{e.name}</h4>))}
                         </ul>
 
 
@@ -80,7 +86,8 @@ export default function Detail() {
 
                     </div>
                 </div> :
-                <div><img src='https://i.gifer.com/origin/0d/0dea0c59cbf084d981fc5b55643cb6e6.gif' alt="" /></div>
+                
+                <div><img src='https://i.gifer.com/origin/0d/0dea0c59cbf084d981fc5b55643cb6e6.gif' alt="no hay un pingo" /></div>
         }
         <div className={style.ash}>
             <img src={ash} />

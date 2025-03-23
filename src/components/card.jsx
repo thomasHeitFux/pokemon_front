@@ -3,6 +3,8 @@ import style from './card.module.css'
 import {Link} from "react-router-dom"
 
 export default function Card({ id,img, name, type }) {
+    
+    
     return (
         <div className={style.container}>
             <Link to={"/pokemons/"+id}> 
