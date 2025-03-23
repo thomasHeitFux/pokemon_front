@@ -12,6 +12,8 @@ export default function PokemonCreate() {
     const history = useHistory()
     const allPokemons = useSelector((state) => state.allPokemons);
     const allNames = allPokemons.map(e => e.name)
+    console.log(types);
+    
 
     useEffect(() => {
         dispatch(getPokemons(),getTypes());
@@ -193,7 +195,7 @@ export default function PokemonCreate() {
                     name='type'
                     onChange={e => handleSelect(e)}>
                     {types.map((t) => (
-                        <option value={t.name}>{t.name}</option>
+                        <option value={t}>{t}</option>
                     ))}
                 </select>
                 <ul className={style.ul}>
